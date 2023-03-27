@@ -14,12 +14,12 @@
   </ion-header>
 
   <!-- I don't know why and I don't want to know why but setting height to 30% makes the missing images display.-->
-  <div id="container" style="height:30%;">
+  <div id="container" style="height:70%;">
 
     <ion-list style="margin:10px;">
-      <ion-item *ngFor="let m of movies">
+      <ion-item *ngFor="let m of movies" style="align-items: center;">
 
-          <ion-card>
+          <ion-card >
             <ion-img src={{m.Poster}}></ion-img>
             <ion-card-header>
               <ion-card-subtitle>{{m.Year}}</ion-card-subtitle>
