@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../Services/movie.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  movies:any[]=[];
+  constructor(private ms: MovieService) {}
 
+  ngOnInit(): void {
+    this.ms.MovieList().subscribe(
+      (data)=>{
+        this.movies = data.Search;
+      }
+    );
+  }
 }
